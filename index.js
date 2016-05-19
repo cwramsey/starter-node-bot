@@ -26,6 +26,11 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
+controller.on('message_received', function (bot, message) {
+  console.log(message);
+  console.log(Object.keys(message));
+});
+
 controller.hears(['ha', 'haha', 'lol'], ['message_received,direct_mention,mention,direct_message'], function (bot, message) {
   console.log("Heard a laugh");
   bot.reply(message, 'http://instantostrich.com')
