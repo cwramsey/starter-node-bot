@@ -27,5 +27,6 @@ if (token) {
 }
 
 controller.hears(['ha', 'haha', 'lol'], ['direct_mention'], function (bot, message) {
-  bot.reply(message, 'instantostrich.com')
+  console.log("Heard a laugh");
+  bot.reply(message, 'http://instantostrich.com')
 })
